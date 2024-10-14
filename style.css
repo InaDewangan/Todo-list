@@ -1,0 +1,181 @@
+/* Basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* background-image: url("https://e0.pxfuel.com/wallpapers/709/198/desktop-wallpaper-gypsy-ways-night-sky-with-stars.jpg"); */
+    background-image: url("https://t4.ftcdn.net/jpg/06/28/90/49/360_F_628904947_x5dk2vULdk4lgYbawLZr0oqy5vH0hrQV.jpg");
+
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    font-family: Arial, sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Glassmorphism effect for the todo container */
+.todo-container {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    padding: 30px 20px;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    color: white;
+    animation: fadeIn 1.2s ease-in;
+    position: relative;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+h1 {
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    font-size: 24px;
+}
+
+input[type="text"] {
+    padding: 10px;
+    width: 80%;
+    border-radius: 20px;
+    border: none;
+    margin-bottom: 10px;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    outline: none;
+    text-align: center;
+    transition: box-shadow 0.3s ease;
+}
+
+input[type="text"]::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+input[type="text"]:focus {
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+button {
+    padding: 10px 20px;
+    background-color: rgba(18, 130, 162, 0.6);
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    margin: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+    font-size: 14px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+button:hover {
+    background-color: rgba(18, 130, 162, 0.8);
+    transform: scale(1.05);
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+/* Glassmorphism effect for list items */
+li {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+li:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+    transform: scale(1.02);
+}
+
+li.completed {
+    background-color: rgba(18, 130, 162, 0.4);
+    text-decoration: line-through;
+}
+
+li span {
+    flex-grow: 1;
+    padding-right: 10px;
+    word-break: break-word;
+}
+
+.icons button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: white;
+    font-size: 16px;
+    margin-left: 5px;
+    transition: color 0.3s ease;
+}
+
+.icons button:hover {
+    color: rgba(18, 130, 162, 0.8);
+}
+
+/* Clear All button style */
+#clearAllBtn {
+    background-color: rgba(255, 99, 71, 0.6);
+    margin-top: 15px;
+}
+
+#clearAllBtn:hover {
+    background-color: rgba(255, 99, 71, 0.8);
+}
+
+.filter-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+}
+
+.filter-buttons button {
+    width: 30%;
+}
+
+/* Scrollbar styles for the task list */
+ul::-webkit-scrollbar {
+    width: 6px;
+}
+
+ul::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+}
+
+ul::-webkit-scrollbar-track {
+    background: transparent;
+}
